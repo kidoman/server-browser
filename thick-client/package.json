@@ -4,13 +4,12 @@
   "version": "0.1.0",
   "main": "index.html",
   "window": {
-    "toolbar": true,
+    "frame": false,
+    "toolbar": false,
     "width": 660,
     "height": 500,
-    "min_width": 660,
-    "min_height": 500,
-    "max_width": 660,
-    "max_height": 500
+    "resizable": false,
+    "fullscreen": false
   },
   "dependencies": {
     "lodash": "^2.4.1",
