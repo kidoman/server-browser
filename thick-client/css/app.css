@@ -1,0 +1,41 @@
+.server-list {
+  height: 383px;
+}
+
+.server-list thead, .server-list tbody, .server-list tr, .server-list td, .server-list th { display: block; }
+
+.server-list tr:after {
+  content: ' ';
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.server-list thead th {
+  height: 30px;
+}
+
+.server-list tbody {
+  height: 328px;
+  overflow-y: auto;
+}
+
+.server-list tbody td, .server-list thead th {
+  float: left;
+}
+
+.server-list .idx {
+  width: 5%;
+}
+
+.server-list .ip {
+  width: 65%;
+}
+
+.server-list .location {
+  width: 20%;
+}
+
+.server-list .ping {
+  width: 10%;
+}

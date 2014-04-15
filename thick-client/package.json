@@ -1,0 +1,19 @@
+{
+  "name": "server-browser",
+  "description": "Simple Server Browser",
+  "version": "0.1.0",
+  "main": "index.html",
+  "window": {
+    "toolbar": true,
+    "width": 660,
+    "height": 500,
+    "min_width": 660,
+    "min_height": 500,
+    "max_width": 660,
+    "max_height": 500
+  },
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "q": "^1.0.1"
+  }
+}
