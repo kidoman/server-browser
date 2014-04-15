@@ -31,4 +31,6 @@ function ServerBrowserCtrl($scope, $http, $timeout) {
     var win = gui.Window.get();
     win.close();
   };
+
+  $scope.refresh();
 };
