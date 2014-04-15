@@ -43,3 +43,7 @@
 .server-list .ping {
   width: 10%;
 }
+
+h6.powered {
+  padding-top: 13px;
+}
