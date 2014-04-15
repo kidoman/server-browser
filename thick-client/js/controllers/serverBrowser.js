@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var gui = require('nw.gui');
 
 function ServerBrowserCtrl($scope, $http, $timeout) {
   $scope.servers = [];
@@ -24,5 +25,10 @@ function ServerBrowserCtrl($scope, $http, $timeout) {
         $scope.$broadcast('refresh');
       });
     });
+  };
+
+  $scope.quit = function() {
+    var win = gui.Window.get();
+    win.close();
   };
 };

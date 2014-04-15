@@ -16,6 +16,7 @@
 </head>
 <body>
   <div class="container-fluid" ng-controller="ServerBrowserCtrl">
+  <div class="pull-right"><span class="quit glyphicon glyphicon-remove" ng-click="quit()"></span></div>
     <h1>Servers <small ng-if="servers">{{servers.length}} servers</small></h1>
     <div class="server-list">
       <table class="table table-hover table-condensed" ng-if="servers">
