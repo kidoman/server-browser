@@ -47,5 +47,14 @@
     </div>
     <h6 class="powered">Powered by Thought<strong>Works</strong></h6>
   </div>
+  <script>
+    var Gaze = require('gaze').Gaze;
+    var gaze = new Gaze('**/*');
+
+    gaze.on('all', function(event, filepath) {
+     if (location)
+       location.reload();
+    });
+  </script>
 </body>
 </html>
