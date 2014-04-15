@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
 
@@ -12,8 +13,22 @@ var locationCache *lru.Cache
 
 type Server struct {
 	IP       string `json:"ip"`
+	Name     string `json:"name"`
+	Status   string `json:"status"`
 	Ping     int    `json:"ping,omitempty"`
 	Location string `json:"location,omitempty"`
+}
+
+var types = []string{"PUG", "Scrim", "DM"}
+
+func randomName() string {
+	return fmt.Sprintf("SoStronk %v Server %v", types[rand.Intn(3)], rand.Intn(20)+2)
+}
+
+var statuses = []string{"Available", "Waiting", "Busy", "Live"}
+
+func randomStatus() string {
+	return statuses[rand.Intn(4)]
 }
 
 func GetServerDetails(enc Encoder, params martini.Params) string {
@@ -36,6 +51,8 @@ func GetServerDetails(enc Encoder, params martini.Params) string {
 	}
 	s := Server{
 		IP:       ip,
+		Name:     randomName(),
+		Status:   randomStatus(),
 		Ping:     ping,
 		Location: l.(string),
 	}

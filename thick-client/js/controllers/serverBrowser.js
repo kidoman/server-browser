@@ -18,7 +18,7 @@ function ServerBrowserCtrl($scope, $http, $timeout) {
     $http({url: 'http://localhost:3000/servers'})
     .success(function(data) {
       $scope.servers = _(data).map(function(ip) {
-        return {ip: ip, location: "", ping: 999};
+        return {ip: ip, name: '', status: '', location: '', ping: 999};
       }).value();
       $timeout(function() {
         $scope.$broadcast('refresh');

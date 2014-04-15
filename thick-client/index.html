@@ -21,17 +21,19 @@
       <table class="table table-hover table-condensed" ng-if="servers">
         <thead>
           <tr>
-            <th class="idx">#</th>
-            <th class="ip">Server</span></th>
+            <th class="name" ng-click="sortOn('name')">Name <span ng-if="predicate === 'name'" ng-class="{glyphicon: true, 'glyphicon-arrow-up': reverse, 'glyphicon-arrow-down': !reverse}"></span></th>
+            <th class="status" ng-click="sortOn('status')">Status <span ng-if="predicate === 'status'" ng-class="{glyphicon: true, 'glyphicon-arrow-up': reverse, 'glyphicon-arrow-down': !reverse}"></span></th>
+            <th class="ip">IP</span></th>
             <th class="location" ng-click="sortOn('location')">Location <span ng-if="predicate === 'location'" ng-class="{glyphicon: true, 'glyphicon-arrow-up': reverse, 'glyphicon-arrow-down': !reverse}"></span></th>
             <th class="ping" ng-click="sortOn('ping')">Ping <span ng-if="predicate === 'ping'" ng-class="{glyphicon: true, 'glyphicon-arrow-up': reverse, 'glyphicon-arrow-down': !reverse}"></span></th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="server in servers | orderBy:predicate:reverse" ng-controller="ServerCtrl">
-            <td class="idx">{{$index + 1}}</td>
+            <td class="name">{{server.name}}&nbsp;</td>
+            <td class="status">{{server.status}}&nbsp;</td>
             <td class="ip">{{server.ip}}</td>
-            <td class="location">{{server.location}}</td>
+            <td class="location">{{server.location}}&nbsp;</td>
             <td class="ping"><span ng-if="server.ping !== 999">{{server.ping}} ms</span>&nbsp;</td>
           </tr>
         </tbody>

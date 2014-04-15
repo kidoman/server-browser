@@ -24,16 +24,20 @@
   float: left;
 }
 
-.server-list .idx {
-  width: 5%;
+.server-list .name {
+  width: 42%;
+}
+
+.server-list .status {
+  width: 13%;
 }
 
 .server-list .ip {
-  width: 65%;
+  width: 18%;
 }
 
 .server-list .location {
-  width: 20%;
+  width: 17%;
 }
 
 .server-list .ping {
